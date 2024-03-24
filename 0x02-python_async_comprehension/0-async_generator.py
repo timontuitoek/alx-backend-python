@@ -3,14 +3,17 @@ import asyncio
 import random
 from typing import List
 
-async def async_generator() -> List[int]: # type: ignore
+
+async def async_generator() -> List[int]:  # type: ignore
     """Generate a list of random numbers asynchronously"""
     for _ in range(10):
         yield random.randint(0, 10)
 
+
 async def async_comprehension() -> List[int]:
     """Generate a list of random numbers asynchronously"""
     return [random.randint(0, 10) for _ in range(10)]
+
 
 async def measure_runtime() -> float:
     """Iterate over the values yielded by async_generator"""
